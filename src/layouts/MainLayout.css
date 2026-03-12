@@ -1,0 +1,15 @@
+.navigator {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    padding: 10px;
+    background-color: pink;
+}
+.navigator button {
+    width: 100px;
+}
