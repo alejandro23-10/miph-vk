@@ -1,29 +1,11 @@
-import { Outlet, useNavigate } from 'react-router';
-import './MainLayout.css'
-import Chats from '../pages/Chat';
+import { Outlet } from "react-router";
+import Navigator from "../components/Navigator";
 
 export default function MainLayout() {
-    let navigate = useNavigate();
-
     return (
         <div>
             <Outlet />
-            <div className='navigator'>
-                <button onClick={() => navigate('Chats')}>
-                    Ленточка тикитока
-                </button>
-            </div>
-            <div className='navigator'>
-                <button onClick={() => navigate('ChatId')}>
-                    Чатик с фсб 
-                </button>
-            </div>
-            <div className='navigator'>
-                <button onClick={() => navigate('Profile')}>
-                    Профиль
-                </button>
-            </div>
+            <Navigator />
         </div>
-    )
-
+    );
 }
