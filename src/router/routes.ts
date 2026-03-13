@@ -9,9 +9,9 @@ import register from "../pages/Register";
 import Login from "../pages/Login";
 import Profile from "../pages/Profile";
 import MainLayout from "../layouts/MainLayout";
-
-
-
+import ChatsLayout from "../layouts/ChatsLayout"
+import AuthLayout from "../layouts/AuthLayout"
+import ChatsPage from "../pages/ChatsPage"
 
 const router = createBrowserRouter([
     {
@@ -40,6 +40,15 @@ const router = createBrowserRouter([
                 Component: UserId
             },
             {
+                path: "profile",
+                Component: Profile
+            }
+        ]
+    },
+        {path:"/auth",
+        Component: AuthLayout,
+        children: [
+            {
                 path: "register",
                 Component: register,
             },
@@ -47,14 +56,19 @@ const router = createBrowserRouter([
                 path: "login",
                 Component: Login
             }, 
-            {
-                path: "profile",
-                Component: Profile
-            }
         ]
     },
+        {path: "/chats",
+        Component: ChatsLayout,
+        children: [
+            {path: "",
+            Component: ChatsPage
+            },
+            {path: ":chatId",
+            Component: ChatId
+            }
+        ]
 
-   
+    }
 ]);
-
 export default router;
