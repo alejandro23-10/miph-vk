@@ -6,6 +6,7 @@ import MainLayout from "../../layouts/MainLayout";
 export default function Navigator() {
     const navigate = useNavigate();
     const location = useLocation();
+    const isActive = (path: string) => location.pathname === path;
     useEffect(() => {
         if (location.pathname=="/Auth"){
         console.log('AuthLayout')
@@ -27,19 +28,28 @@ console.log(location.pathname)
     return (
         <div className="navigator-container">
             <div className="navigator">
-                <button onClick={() => navigate("/")}>
+                <button
+                    className={isActive("/") ? "active" : ""}
+                    onClick={() => navigate("/")}
+                >
                     Ленточка тикитока
                 </button>
             </div>
 
             <div className="navigator">
-                <button onClick={() => navigate("/Chats")}>
+                <button
+                    className={location.pathname.startsWith("/Chats") ? "active" : ""}
+                    onClick={() => navigate("/Chats")}
+                >
                     Чатики со спецслужбами
                 </button>
             </div>
 
             <div className="navigator">
-                <button onClick={() => navigate("/Auth")}>
+                <button
+                    className={isActive("/Auth") ? "active" : ""}
+                    onClick={() => navigate("/Auth")}
+                >
                     аутистофикация
                 </button>
             </div>
