@@ -8,7 +8,7 @@ export default function MainLayout() {
     const navigate = useNavigate();
     const { isAuth, location } = useCheckRoute();
     useEffect(() => {
-        if (isAuth && location.pathname === '/') {
+        if (isAuth == false && location.pathname === '/') {
             navigate("/Auth/login");
         }
     }, [isAuth, location, navigate]);
