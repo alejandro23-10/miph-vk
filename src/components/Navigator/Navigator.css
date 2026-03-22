@@ -1,12 +1,10 @@
 .navigator-container {
     position: fixed;
     left: 50%;
-    bottom: 350px; /* отступ от низа */
+    bottom: 350px; 
     transform: translateX(-50%);
 }
 
-
-/* Делаем один блок вместо трёх */
 .navigator {
     display: flex;
     flex-direction: column;
@@ -17,9 +15,8 @@
     align-items: center;
 }
 
-/* Кнопки */
 .navigator button {
-    min-width: 180px;              /* вместо фиксированной ширины */
+    min-width: 180px;              
     max-width: 220px;
     padding: 10px 12px;
 
@@ -32,18 +29,16 @@
     cursor: pointer;
     transition: all 0.2s ease;
 
-    /* 🔥 фикс переполнения текста */
-    white-space: normal;           /* перенос строк */
-    word-break: break-word;        /* перенос длинных слов */
+
+    white-space: normal;           
+    word-break: break-word;        
     text-align: center;
 }
 
-/* Hover */
 .navigator button:hover {
     background-color: #444;
 }
 
-/* Активная */
 .navigator button.active {
     background-color: #ee0303;
     color: white;

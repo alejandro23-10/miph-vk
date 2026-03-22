@@ -47,8 +47,8 @@ console.log(location.pathname)
 
             <div className="navigator">
                 <button
-                    className={isActive("/Auth") ? "active" : ""}
-                    onClick={() => navigate("/Auth")}
+                    className={isActive("/auth") ? "active" : ""}
+                    onClick={() => navigate("/auth")}
                 >
                     аутистофикация
                 </button>

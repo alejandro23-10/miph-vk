@@ -23,13 +23,20 @@ const router = createBrowserRouter([
               Component: HomePage  
             },
             {
-                path: "chats",
-                Component: Chats,
-            },
-            {
-                path: ":chatId",
-                Component: ChatId
-            },
+              path: "/chats",
+              Component: ChatsLayout,
+              children: [
+        {
+              path: "",
+              Component: ChatsPage
+        },
+        {
+              path: ":chatId",
+              Component: ChatId
+        }
+    ]
+},
+
             {
                 path: "user",
                 Component: User,
