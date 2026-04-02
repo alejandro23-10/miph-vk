@@ -1,0 +1,18 @@
+export const comments = [
+    {from_user: 1,
+    text: 'shalom',
+    replies: null,
+    image: null,
+    created_at: 11092001,
+    comment_origin: 1,
+    post: 1,
+    },
+    {from_user: 2,
+    text: 'hello',
+    replies: null,
+    image: null,
+    created_at: 2202,
+    comment_origin: 2,
+    post: 1,
+    },
+]
