@@ -1,32 +1,38 @@
-export const users = [
+import type { User } from "../types/User"
+import { posts } from "./Post"
+ const users: User[] = [
     {
-        id: 1,
+        id: 0,
         username: 'm0nesy',
     avatar: 'imagine an image',
     decription: 'ilya',
-    posts: null,
-    friends: null,
+    posts: [posts[0]],
+    friends: [],
     email: 'monesy@gmail.com',
-    last_seen: 11092011,
+    last_seen: 1775228842,
     },
     {
-        id: 2,
+        id: 1,
         username: 's1mple',
     avatar: 'imagine an image',
     decription: 'sanya',
-    posts: null,
-    friends: null,
+    posts: [posts[1]],
+    friends: [],
     email: 'siple@gmail.com',
-    last_seen: 2202,
+    last_seen: 1775228842,
     },
     {
-        id: 3,
+        id: 2,
         username: 'kyosuke',
     avatar: 'imagine an image',
     decription: 'ya hz kak ego zovut',
-    posts: null,
-    friends: null,
+    posts: [posts[1]],
+    friends: [],
     email: 'suka@gmail.com',
-    last_seen: 2202,
+    last_seen: 1775228842,
     }
 ]
+users[1].friends = [users[0]]
+users[2].friends = [users[0]]
+users[0].friends = [users[1], users[2]]
+export default users

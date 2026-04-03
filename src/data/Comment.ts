@@ -1,18 +1,24 @@
-export const comments = [
-    {from_user: 1,
+import type { Comment } from "../types/Comment";
+
+    const comments: Comment[] = [
+    {id: 0,
+    from_user: 1,
     text: 'shalom',
-    replies: null,
-    image: null,
-    created_at: 11092001,
-    comment_origin: 1,
+    replies: [],
+    image: 'image',
+    created_at: 1775228842,
+    comment_origin: null,
     post: 1,
     },
-    {from_user: 2,
+    {id: 1,
+    from_user: 2,
     text: 'hello',
-    replies: null,
-    image: null,
-    created_at: 2202,
-    comment_origin: 2,
+    replies: [],
+    image: 'image',
+    created_at: 1775228842,
+    comment_origin: 0,
     post: 1,
     },
 ]
+comments[0].replies = [comments[1]]
+export default comments
