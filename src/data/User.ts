@@ -36,3 +36,4 @@ users[1].friends = [users[0]]
 users[2].friends = [users[0]]
 users[0].friends = [users[1], users[2]]
 export default users
+    

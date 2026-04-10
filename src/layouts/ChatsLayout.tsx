@@ -6,6 +6,7 @@ import useCheckRoute from "../composables/useAbilities";
 import './chats.css'
 import { chats } from "../data/Chats";
 import type { Chat } from "../types/Chat";
+import ChatComponent from "../components/ChatComponent/ChatComponent";
 
 export default function MainLayout() {
     const navigate = useNavigate();
@@ -16,8 +17,8 @@ export default function MainLayout() {
         }
     }, [isAuth, location, navigate]);
       
-    function takeId(a: Chat) {
-        return (<div>{a.id}</div>)
+    function takeId(chat: Chat) {
+        return <ChatComponent chat={chat}  />
 
     }
     useEffect(() => {
