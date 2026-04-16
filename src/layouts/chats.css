@@ -7,3 +7,67 @@
     background-color: aqua
 
 }
+.chat-card {
+  padding: 12px;
+  margin: 8px;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  transition: all 0.2s ease;
+  border: 1px solid #eee;
+}
+
+.chat-card:hover {
+  background: #f5f7fa;
+  transform: translateY(-2px);
+}
+
+/* верх */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  background: #ddd;
+  flex-shrink: 0;
+}
+
+.chat-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chat-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* низ */
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chat-last-message {
+  font-size: 14px;
+  color: #555;
+}
+
+.chat-user {
+  font-size: 12px;
+  color: #999;
+}
