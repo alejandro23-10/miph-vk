@@ -21,6 +21,20 @@
   transition: all 0.2s ease;
   border: 1px solid #eee;
 }
+.chat-card-active {
+  padding: 12px;
+  margin: 8px;
+  border-radius: 12px;
+  background: #0ed9f4;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  transition: all 0.2s ease;
+  border: 1px solid #eee;
+}
 
 .chat-card:hover {
   background: #f5f7fa;

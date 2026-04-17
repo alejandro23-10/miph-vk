@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import { useNavigate } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navigator from "../components/Navigator/Navigator";
 import useCheckRoute from "../composables/useAbilities";
 import './chats.css'
@@ -8,7 +8,7 @@ import { chats } from "../data/Chats";
 import type { Chat } from "../types/Chat";
 import ChatComponent from "../components/ChatComponent/ChatComponent";
 
-export default function MainLayout() {
+export default function ChatsLayout() {
     const navigate = useNavigate();
     const { isAuth, location } = useCheckRoute();
     useEffect(() => {
@@ -16,20 +16,28 @@ export default function MainLayout() {
             navigate("/Auth/login");
         }
     }, [isAuth, location, navigate]);
-      
-    function takeId(chat: Chat) {
-        return <ChatComponent chat={chat}  />
+    
+    const [selectedChat, setSelectedChat] = useState<null | number>(null)
 
+    function takeChat(chat: Chat) {
+        return  <div onClick={() => selectChat(chat.id)}>< ChatComponent chat={chat} selected={chat.id == selectedChat}/> </div>
+        
     }
+    function selectChat(chatId: number){
+        console.log(chatId)
+        setSelectedChat(chatId)
+    
+    }
+
     useEffect(() => {
-        console.log(chats.map(takeId))
+        console.log(chats.map(takeChat))
     }, [])
     return (
         <div>
             <Outlet />
             <Navigator />
-            <div className="chats-look">
-                {chats.map(takeId)}
+            <div className="chats-look" >
+                {chats.map(takeChat)}
             </div>
         </div>
     );

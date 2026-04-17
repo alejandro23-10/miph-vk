@@ -1,10 +1,10 @@
 import type { Chat } from "../../types/Chat";
 
-export default function ChatComponent(props: { chat: Chat }) {
+export default function ChatComponent(props: { chat: Chat, selected: boolean }) {
     const lastMessage = props.chat.messages[props.chat.messages.length - 1];
 
     return (
-        <div className="chat-card">
+        <div className={props.selected ? 'chat-card-active' : 'chat-card'} >
             <div className="chat-header">
                 <div className="chat-avatar">
                     <img src={props.chat.avatar} alt="avatar" />
