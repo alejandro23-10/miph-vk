@@ -1,7 +1,7 @@
 .navigator-container {
     position: fixed;
-    left: 50%;
-    bottom: 350px; 
+    right: 0vw;
+    top: 0vh; 
     transform: translateX(-50%);
 }
 

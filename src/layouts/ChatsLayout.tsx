@@ -7,6 +7,7 @@ import './chats.css'
 import { chats } from "../data/Chats";
 import type { Chat } from "../types/Chat";
 import ChatComponent from "../components/ChatComponent/ChatComponent";
+import SelectedChatComponent from "../SelectedChatComponent/SelectedChatComponent";
 
 export default function ChatsLayout() {
     const navigate = useNavigate();
@@ -23,11 +24,25 @@ export default function ChatsLayout() {
         return  <div onClick={() => selectChat(chat.id)}>< ChatComponent chat={chat} selected={chat.id == selectedChat}/> </div>
         
     }
+    function handleEscCLick(event: KeyboardEvent) {
+        if (event.key == "Escape") {
+            setSelectedChat(null);
+        }
+    }
+
     function selectChat(chatId: number){
         console.log(chatId)
         setSelectedChat(chatId)
     
     }
+    useEffect(() => {
+        document.addEventListener('keydown', handleEscCLick)
+        return() => {
+            document.removeEventListener('keydown', handleEscCLick);
+        };
+
+    }, []);
+
 
     useEffect(() => {
         console.log(chats.map(takeChat))
@@ -36,6 +51,7 @@ export default function ChatsLayout() {
         <div>
             <Outlet />
             <Navigator />
+            <SelectedChatComponent chat={chats.find((lookChat) => {return lookChat.id == selectedChat})}/>
             <div className="chats-look" >
                 {chats.map(takeChat)}
             </div>
